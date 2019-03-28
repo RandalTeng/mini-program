@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="top">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权 </button>
+    <block wx:else>
+      <view class="avatar-box">
+        <image bindtap="bindViewTap" class="avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
+      </view>
+      <view class="userinfo-box">
+        <text class="nickname">{{userInfo.nickName}}</text>
+        <image wx:if="{{isFollower}}" src="" alt="VIP ICON"></image>
+        <block wx:else>
+          <text class="follower-desc">您还不是会员哦</text>
+          <button class="follow-btn" hover-class="none" bindtap="clickFollow">
+            <text>成为会员</text>
+          </button>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="more">
+    <view class="more-route my-follow" bindtap="myFollow">
+      <text class="route-label">我的加盟</text>
+      <text class="route-entry">></text>
+    </view>
+    <view class="more-route service" bindtap="customService">
+      <text class="route-label">客服咨询</text>
+      <text class="route-entry">></text>
+    </view>
+    <view class="more-route contact" bindtap="contactUs">
+      <text class="route-label">联系我们</text>
+      <text class="route-entry">></text>
+    </view>
+  </view>
+</view>

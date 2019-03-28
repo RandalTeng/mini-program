@@ -1,0 +1,83 @@
+/* pages/mine/mine.wxss */
+.container {
+  justify-content: center;
+}
+.top{
+  display: flex;
+  width: 100%;
+  height: 300rpx;
+  flex-direction: row;
+  background-color: #ffa500;
+}
+.avatar-box{
+  width: 200rpx;
+  height: 100%;
+}
+.avatar-box .avatar{
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+  border: 5rpx solid #fff;
+  border-radius: 200rpx;
+  margin: 70rpx auto;
+}
+.userinfo-box {
+  flex-direction: column;
+  margin-top: 70rpx;
+  color: #fff;
+}
+.userinfo-box .nickname {
+  display: flex;
+  font-size: 45rpx;
+  line-height: 45rpx;
+  margin: 5rpx 0;
+}
+.userinfo-box .follower-desc {
+  font-size: 30rpx;
+  line-height: 30rpx;
+  margin: 5rpx 0;
+}
+.userinfo-box .follow-btn {
+  display: flex;
+  width: 200rpx;
+  height: 50rpx;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin: 5rpx 0;
+  padding: 0;
+  border-radius: 0;
+}
+.userinfo-box .follow-btn::after{
+  border: 0;
+}
+.userinfo-box .follow-btn text {
+  margin: 0 auto;
+}
+
+.more {
+  width: 100%;
+  line-height: 50rpx;
+}
+.more .more-route {
+  display: flex;
+  flex-direction: row;
+  height: 100rpx;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  padding: 0 50rpx;
+}
+.more .more-route .route-label {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.more .more-route .route-entry {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+}

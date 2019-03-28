@@ -1,0 +1,7 @@
+/**index.wxss**/
+.container {
+  flex-direction: column;
+}
+search {
+
+}

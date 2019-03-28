@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class='search'>
+    <view class='placeholder'>
+      <view class='icon'></view>
+      搜索
+    </view>
+    <view class='input-box hide'>
+      <view class='icon'></view>
+      <view class='input'>
+        <input placeholder='搜索' class='search-input'></input>
+      </view>
+      <view class='close'></view>
+      <view class='btn'>搜索</view>
+    </view>
+  </view>
+  <view class='category'>
+    <view class='list'>
+      <view class='item active'>全部</view>
+      <view class='item'>最新</view>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='list'>
+      <view class='item'>
+        <view class='header-no'>00002149</view>
+        <view class='title'></view>
+        <view class='pre-pic'>
+          <view class='img'><image src=''></image></view>
+          <view class='img'><image src=''></image></view>
+          <view class='img'><image src=''></image></view>
+        </view>
+        <view class='footer'>
+          <view class='left'>
+            <view class='created-at'>2019-03-28</view>
+            <view class='view'>1</view>
+          </view>
+          <view class='right'>
+            <view class='share'>分享</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

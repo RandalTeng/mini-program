@@ -1,0 +1,22 @@
+/**app.wxss**/
+page{
+  background-color: #eee;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.btn {
+  background-color: #fff;
+  border-radius: 0;
+}
+.btn::after {
+  border: 0;
+}
+.hide {
+  display: none
+}
