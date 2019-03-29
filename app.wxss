@@ -2,6 +2,9 @@
 page{
   background-color: #eee;
 }
+view, scroll-view {
+    display: flex;
+}
 .container {
   height: 100%;
   display: flex;
@@ -9,7 +12,7 @@ page{
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-} 
+}
 .btn {
   background-color: #fff;
   border-radius: 0;
@@ -19,4 +22,20 @@ page{
 }
 .hide {
   display: none
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.text-center {
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
 }

@@ -1,43 +1,53 @@
 <!--index.wxml-->
-<view class='container'>
-  <view class='search'>
-    <view class='placeholder'>
-      <view class='icon'></view>
-      搜索
-    </view>
-    <view class='input-box hide'>
-      <view class='icon'></view>
-      <view class='input'>
-        <input placeholder='搜索' class='search-input'></input>
+<view class='container column'>
+  <view class='search' catchtap='searchFocus'>
+    <view class="bar {{searchData.focus ? 'hide' : ''}}">
+      <view class='center row'>
+        <view class='icon text-center'><image src='../../images/search.png'></image></view>
+        <text>搜索</text>
       </view>
-      <view class='close'></view>
-      <view class='btn'>搜索</view>
+    </view>
+    <view class="bar row {{searchData.focus ? '' : 'hide'}}">
+      <view class='input-box'>
+        <view class='icon text-center'><image src='../../images/search.png'></image></view>
+        <input placeholder='搜索' class='input' focus="{{searchData.focus}}" bindblur='searchBlur' bindinput="searchInput" value="{{searchData.value}}"></input>
+        <view class='close text-center' catchtap='searchBlur'><image src='../../images/close.png'></image></view>
+      </view>
+      <view class='btn text-center right' catchtap='searchRequest'>搜索</view>
     </view>
   </view>
-  <view class='category'>
-    <view class='list'>
-      <view class='item active'>全部</view>
-      <view class='item'>最新</view>
+  
+  <scroll-view class='category' scroll-x>
+    <view class='list row' style="width: {{categoryList.length * 160}}rpx">
+      <view wx:for="{{categoryList}}" wx:key="item.id" data-cid="{{item.id}}" class="item text-center {{currentCate == item.id ? 'active' : ''}}" catchtap='selectCate'>{{item.name}}</view>
     </view>
-  </view>
-  <view class='content'>
-    <view class='list'>
-      <view class='item'>
-        <view class='header-no'>00002149</view>
-        <view class='title'></view>
-        <view class='pre-pic'>
-          <view class='img'><image src=''></image></view>
-          <view class='img'><image src=''></image></view>
-          <view class='img'><image src=''></image></view>
+  </scroll-view>
+  <view class='content column'>
+    <view class='item column' wx:for="{{contentList}}" wx:key="item.no">
+      <view class='header-no'>
+        <!--<image class='content-item icon text-center' src=''></image>-->
+        <text>{{item.no}}</text>
+      </view>
+      <view class='title'>{{item.title}}</view>
+      <view class='pre-pic row'>
+        <view class='img' wx:for="{{item.sub_pics}}" wx:for-item="subItem" wx:key="index" wx:if="{{index<3}}">
+          <image src='{{subItem.src}}' mode='aspectFill'></image>
         </view>
-        <view class='footer'>
-          <view class='left'>
-            <view class='created-at'>2019-03-28</view>
-            <view class='view'>1</view>
+      </view>
+      <view class='footer row'>
+        <view class='left'>
+          <view class='created-at'>
+            <view class='icon text-center'></view>
+            <text>{{item.created_at}}</text>
           </view>
-          <view class='right'>
-            <view class='share'>分享</view>
+          <view class='view'>
+            <view class='icon text-center'></view>
+            <text>{{item.views}}</text>
           </view>
+        </view>
+        <view class='right share' wx:if="{{item.can_share}}">
+          <view class='icon text-center'></view>
+          <text>分享</text>
         </view>
       </view>
     </view>
