@@ -1,5 +1,10 @@
-<!--pages/contact/contact.wxml-->
-<view class='text-box'>
-
+<view class='container'>
+  <view class='box column'>
+    <text>成为会员购买货源请联系邀请人, 我们不提供单独授权!</text>
+    <text>如有一下问题可联系我们:</text>
+    <text>1. 会员续费等疑问</text>
+    <text>2. 货源商家入驻</text>
+    <text>3. 货源信息隐私纠纷</text>
+    <text>* 本小程序仅供实体或虚拟上家获取货源信息使用, 不保证货源的联系方一定通过好友申请, 也不提供任何交易担保. 所有货源信息均来自公开渠道, 不涉及任何个人隐私.</text>
+  </view>
 </view>
-<text>pages/contact/contact.wxml</text>

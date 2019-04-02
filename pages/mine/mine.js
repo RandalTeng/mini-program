@@ -6,110 +6,74 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    hasUserInfo: false,
-    isFollower: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    userInfo: null,
+    isFollower: true,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    jsCode: '',
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
+      this.setData({userInfo: app.globalData.userInfo})
     } else if (this.data.canIUse) {
       app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+        app.globalData.userInfo = res.userInfo
+        this.setData({userInfo: res.userInfo})
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
+          this.setData({userInfo: res.userInfo})
         }
       })
     }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    
+  onShareAppMessage(event) {
+    return {
+      title: 'title',
+      page: 'current/page',
+      imageUrl: 'https://pic.huke88.com/video/cover/2017-06-19/DEEB8088-40F6-EDE3-861B-0570A2682F7B.jpg!/fw/500/format/webp'
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-    
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-    
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-    
-  },
-  getUserInfo: function (e) {
-    console.log(e)
+  saveUser: function (e) {
     app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    this.setData({userInfo: e.detail.userInfo})
+  },
+
+  redirect: function (event) {
+    wx.navigateTo({
+      url: event.currentTarget.dataset.page,
+    });
+  },
+
+  getLogin: function(e) {
+    wx.login({
+      success: (res) => {
+        this.setData({jsCode: res.code})
+      }
     })
   },
-  clickFollow: function () {
-    console.log('click follow.');
-  },
-  myFollow: function () {
-    if (!this.data.isFollower) {
-      return this.clickFollow();
-    }
-    wx.navigateTo({
-      url: '../follow/my-follow',
-    });
-  },
-  customService: function () {
-    wx.navigateTo({
-      url: '../follow/my-follow',
-    });
-  },
-  contactUs: function () {
-    wx.navigateTo({
-      url: '../contact/contact',
-    });
+
+  bindPhone: function(event) {
+    wx.request({
+      url: 'http://dev-applet.huke88.com/user/bind-we-chat-phone',
+      data: {
+        js_code: this.data.jsCode,
+        raw_data: event.detail.encryptedData,
+        iv: event.detail.iv
+      },
+      header: {
+        Authorization: 'Bearer-T9LdiqhBd7DeBR9pUG-G7XU_-DMdKb8I',
+      },
+      method: 'POST',
+      dataType: 'json',
+      success: (res) => {
+        console.log(res)
+      }
+    })
   }
 })

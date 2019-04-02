@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/content/content",
+    "pages/news/news",
     "pages/mine/mine",
     "pages/contact/contact"
   ],
@@ -21,8 +22,8 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "日志"
+        "pagePath": "pages/news/news",
+        "text": "资讯"
       },
       {
         "pagePath": "pages/mine/mine",

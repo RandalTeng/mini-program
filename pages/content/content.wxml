@@ -1,0 +1,53 @@
+<view class="container">
+  <view class="header column">
+    <scroll-view class="scroll" scroll-x scroll-with-animation>
+      <view class="list row" style="width: {{imagesList.length * 750}}rpx">
+        <view class="item" wx:for="{{imagesList}}" wx:key="item.id">
+          <view class='pic'>
+            <image src="{{item.src}}" mode='aspectFit'></image>
+          </view>
+        </view>
+      </view>
+      <view class="little-icon">
+        <view class='item'><image src=''></image></view>
+      </view>
+    </scroll-view>
+    <view class='title row'>
+      <view class='id-title'>
+        <view class='icon text-center'><image src=''></image></view>
+        <text>000000</text>
+      </view>
+      <view class='contact'>
+        <view class='icon text-center'><image src=''></image></view>
+        <text>联系Ta</text>
+      </view>
+    </view>
+    <view class='footer row'>
+      <view class='left'>
+        <view class='created-at'>
+          <view class='icon text-center'><image src=''></image></view>
+          <text>0000</text>
+        </view>
+        <view class='view'>
+          <view class='icon text-center'><image src=''></image></view>
+          <text>11</text>
+        </view>
+      </view>
+      <view class='right share'>
+        <view class='icon text-center'></view>
+        <text>分享</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content column">
+    <view class='title'>
+      <text>{{title}}</text>
+    </view>
+    <view class='pic-detail column'>
+      <view class='item' wx:for="{{imagesList}}" wx:key="item.id">
+        <image src='{{item.src}}' mode='aspectFit' alt="item.alt"></image>
+      </view>
+    </view>
+  </view>
+</view>

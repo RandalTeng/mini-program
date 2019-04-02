@@ -74,14 +74,15 @@ Page({
       },
     ]
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
 
+  },
+
+  redirect: function (event) {
+    console.log(event.currentTarget.dataset)
+    wx.navigateTo({
+      url: '../content/content'
+    })
   },
 
   searchFocus: function () {

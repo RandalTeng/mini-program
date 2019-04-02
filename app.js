@@ -1,20 +1,22 @@
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-    wx.showShareMenu()
+  onLaunch: function (options) {
+    console.log(options)
 
-    // 登录
-    wx.login({
+    wx.getSetting({
       success: res => {
-        console.log(res)
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: res => {
+              this.globalData.userInfo = res.userInfo
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+            }
+          });
+        }
       }
-    })
-    console.log(wx.getSystemInfoSync())
+    });
   },
   globalData: {
     userInfo: null

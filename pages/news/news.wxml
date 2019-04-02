@@ -1,0 +1,27 @@
+<view class='container'>
+  <view class='top'></view>
+  <view class='news column'>
+    <view class='header row'>
+      <text class='label'>公告:</text>
+      <text class='content'>货源招商, 货源代理</text>
+    </view>
+    <view class='list column'>
+      <view class='item row' wx:for="{{newsList}}" wx:key="item.id" catchtap="redirect" data-id="{{item.id}}">
+        <view class='mp-qr'><image src='{{item.qr_src}}'></image></view>
+        <view class='article column'>
+          <text class='title'>{{item.title}}</text>
+          <view class='footer row'>
+            <view class='created-at'>
+              <view class='icon'></view>
+              <text>{{item.created_at}}</text>
+            </view>
+            <view class='views'>
+              <view class='icon'></view>
+              <text>{{item.views}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

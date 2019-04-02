@@ -1,150 +1,144 @@
-.container {
-  font-size: 26rpx;
-  max-width: 750rpx;
+.search {
+  height: 56rpx;
+  width: 718rpx;
+  padding: 16rpx;
 
-  .search {
-    height: 56rpx;
-    width: 718rpx;
-    padding: 16rpx;
+  .bar {
+    width: 100%;
+    background-color: #fff;
+    border: 1rpx #E6E6EA solid;
+    border-radius: 10rpx;
+    font-size: 26rpx;
 
-    .bar {
+    .icon {
+      width: 25rpx;
+      height: 25rpx;
+      margin: 0 10rpx 4rpx;
+
+      image {
+        height: 25rpx;
+        width: 25rpx;
+      }
+    }
+
+    .center {
+      min-width: 10%;
+      height: 100%;
+      margin: 10rpx auto;
+      color: #B2B2B2;
+
+      .icon {
+        margin-top: 7rpx;
+      }
+    }
+
+    .input-box {
       width: 100%;
-      background-color: #fff;
-      border: 1rpx #E6E6EA solid;
-      border-radius: 10rpx;
-      font-size: 26rpx;
 
+      .icon {
+        margin-top: 15rpx;
+      }
+
+      .input {
+        width: 100%;
+      }
+
+      .close {
+        width: 30rpx;
+        height: 30rpx;
+        margin: 12rpx;
+
+        image {
+          width: 30rpx;
+          height: 30rpx;
+        }
+      }
+    }
+
+    .btn {
+      width: 80rpx;
+      background-color: #ffa500;
+      color: #ffffff;
+      border-radius: 0 10rpx 10rpx 0;
+    }
+  }
+}
+
+.category {
+  width: 100%;
+  padding-bottom: 12rpx;
+  font-size: 26rpx;
+
+  .list {
+    background: #ffffff;
+
+    .item {
+      width: 160rpx;
+      height: 56rpx;
+
+      &.active {
+        border-bottom: 5rpx #ffa500 solid;
+      }
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  height: auto;
+
+  .item {
+    width: 670rpx;
+    height: auto;
+    padding: 0 40rpx 12rpx;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+
+    .header-no {
+      width: 100%;
+      height: 56rpx;
+      align-items: center;
+    }
+
+    .title {
+      width: 100%;
+      padding: 5rpx 0 20rpx;
+      flex-wrap: wrap;
+    }
+
+    .pre-pic {
+      width: 718rpx;
+      height: 250rpx;
+      padding-bottom: 20rpx;
+
+      .img {
+        width: 210rpx;
+        height: 250rpx;
+        padding-right: 20rpx;
+        image {
+          width: 210rpx;
+          height: 250rpx;
+          border-radius: 10rpx;
+        }
+        :last-child {
+          padding-right: 0rpx;
+        }
+      }
+    }
+
+    .footer {
+      color: #cacace;
+      justify-content: space-between;
+      align-items: center;
       .icon {
         width: 25rpx;
         height: 25rpx;
-        margin: 0 10rpx 4rpx;
-
-        image {
-          height: 25rpx;
-          width: 25rpx;
-        }
       }
-
-      .center {
-        min-width: 10%;
-        height: 100%;
-        margin: 10rpx auto;
-        color: #B2B2B2;
-
-        .icon {
-          margin-top: 7rpx;
-        }
+      .left {
+        padding-right: 10rpx;
       }
+      .right {
 
-      .input-box {
-        width: 100%;
-
-        .icon {
-          margin-top: 15rpx;
-        }
-
-        .input {
-          width: 100%;
-        }
-
-        .close {
-          width: 30rpx;
-          height: 30rpx;
-          margin: 12rpx;
-
-          image {
-            width: 30rpx;
-            height: 30rpx;
-          }
-        }
-      }
-
-      .btn {
-        width: 80rpx;
-        background-color: #ffa500;
-        color: #ffffff;
-        border-radius: 0 10rpx 10rpx 0;
-      }
-    }
-  }
-
-  .category {
-    width: 100%;
-    padding-bottom: 12rpx;
-    font-size: 26rpx;
-
-    .list {
-      width: 1800rpx;
-      background: #ffffff;
-
-      .item {
-        width: 160rpx;
-        height: 56rpx;
-
-        &.active {
-          border-bottom: 5rpx #ffa500 solid;
-        }
-      }
-    }
-  }
-
-  .content {
-    width: 100%;
-    height: auto;
-
-    .item {
-      width: 670rpx;
-      height: auto;
-      padding: 0 40rpx 12rpx;
-      margin-bottom: 20rpx;
-      background-color: #ffffff;
-
-      .header-no {
-        width: 100%;
-        height: 56rpx;
-        align-items: center;
-      }
-
-      .title {
-        width: 100%;
-        padding: 5rpx 0 20rpx;
-        flex-wrap: wrap;
-      }
-
-      .pre-pic {
-        width: 718rpx;
-        height: 250rpx;
-        padding-bottom: 20rpx;
-
-        .img {
-          width: 210rpx;
-          height: 250rpx;
-          padding-right: 20rpx;
-          image {
-            width: 210rpx;
-            height: 250rpx;
-            border-radius: 10rpx;
-          }
-          :last-child {
-            padding-right: 0rpx;
-          }
-        }
-      }
-
-      .footer {
-        color: #cacace;
-        justify-content: space-between;
-        align-items: center;
-        .icon {
-          width: 25rpx;
-          height: 25rpx;
-        }
-        .left {
-          padding-right: 10rpx;
-        }
-        .right {
-
-        }
       }
     }
   }

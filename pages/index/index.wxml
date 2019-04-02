@@ -23,7 +23,7 @@
     </view>
   </scroll-view>
   <view class='content column'>
-    <view class='item column' wx:for="{{contentList}}" wx:key="item.no">
+    <view class='item column' wx:for="{{contentList}}" wx:key="item.no" catchtap='redirect' data-no="{{item.no}}">
       <view class='header-no'>
         <!--<image class='content-item icon text-center' src=''></image>-->
         <text>{{item.no}}</text>
